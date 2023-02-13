@@ -20,12 +20,14 @@ def find_mismatch(text):
         if next in ")]}":
             #Pārbauda otro iekavu
             if not opening_brackets_stack:
-                return i + 1        
+                return i + 1 
+            pass
             
             #Ja nesakrīt
             if not are_matching(opening_brackets_stack[-1].char,next):
                 return i + 1
-            opening_brackets_stack.pop() 
+            opening_brackets_stack.pop()
+            pass
    
             
     if opening_brackets_stack:
