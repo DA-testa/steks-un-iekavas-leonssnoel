@@ -15,24 +15,18 @@ def find_mismatch(text):
         if next in "([{":
             
             #Pārbauda pirmo iekavu
-            opening_brackets_stack.append(Bracket(next, i))
-            
-            
+            opening_brackets_stack.append(Bracket(next, i))         
 
         if next in ")]}":
             #Pārbauda otro iekavu
             if not opening_brackets_stack:
-                return i + 1
-            
+                return i + 1        
             
             #Ja nesakrīt
             if not are_matching(opening_brackets_stack[-1].char,next):
                 return i + 1
             opening_brackets_stack.pop() 
-            
-            
-            
-            
+   
             
     if opening_brackets_stack:
         return opening_brackets_stack[0].position + 1
