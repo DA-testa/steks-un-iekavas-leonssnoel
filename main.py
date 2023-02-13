@@ -28,16 +28,16 @@ def find_mismatch(text):
             opening_brackets_stack.pop() 
    
             
-    if opening_brackets_stack:
-        return opening_brackets_stack[0].position + 1
+    #if opening_brackets_stack:
+        #return opening_brackets_stack[0].position + 1
     # Atbildes kods
-    return "Success"
+    #return "Success"
 
 
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    #print(mismatch)
+    print(mismatch)
    
 
 
