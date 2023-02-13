@@ -37,11 +37,8 @@ def find_mismatch(text):
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    
-    if mismatch == 'Success':
-        print(mismatch)
-    else:
-        print(int(mismatch))
+    print(mismatch)
+   
 
 
 if __name__ == "__main__":
