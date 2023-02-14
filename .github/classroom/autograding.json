@@ -4,7 +4,7 @@
       "name": "0_",
       "setup": "",
       "run": "python3 main.py",
-      "input": "I\n[({])}\n",
+      "input": "I\r\n[({])}",
       "output": "4",
       "comparison": "included",
       "timeout": 2,
