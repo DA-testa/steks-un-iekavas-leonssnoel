@@ -25,8 +25,8 @@ def find_mismatch(text):
             
             #Ja nesakrīt
             if not are_matching(opening_brackets_stack[-1].char,next):
-                opening_brackets_stack.pop()
                 return i + 1
+            opening_brackets_stack.pop()
             
    
             
