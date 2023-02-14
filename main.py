@@ -13,42 +13,33 @@ def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
-            opening_brackets_stack.append(Bracket(next, i))
-            pass
+            
+            #Pārbauda pirmo iekavu
+            opening_brackets_stack.append(Bracket(next, i))         
 
         if next in ")]}":
+            #Pārbauda otro iekavu
             if not opening_brackets_stack:
+                return i + 1 
+            
+            #Ja nesakrīt
+            if not are_matching(opening_brackets_stack[-1].char,next):
+                opening_brackets_stack.pop()
                 return i + 1
-            last_open = opening_brackets_stack.pop()
-            if not are_matching(last_open.char, next):
-                return i + 1
-            if opening_brackets_stack:
-                return opening_brackets_stack[0].position + 1
-            else:
-                return 'Success'
-            pass
+            
+   
+            
+    if opening_brackets_stack:
+        return opening_brackets_stack[0].position + 1
+    # Atbildes kods
+    return "Success"
 
 
 def main():
-    input_choice = input("Ievadiet F vai I")
-    if input_choice == "F":
-        file_path = input("Ievadiet ceļu lidz failam: ")
-        with open("input.txt", "r") as f:
-            text = f.read()
-            mismatch = find_mismatch(text)
-            if mismatch == 'Success':
-                print("Success")
-            else:
-                print(mismatch)
-    elif input_choice == "I":
-        text = input()
-        mismatch = find_mismatch(text)
-        if mismatch == 'Success':
-            print("Success")
-        else:
-            print(mismatch)
-    else:
-        print("Invalid input choice.")
+    text = input()
+    mismatch = find_mismatch(text)
+    print(mismatch)
+   
 
 
 if __name__ == "__main__":
