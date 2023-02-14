@@ -33,7 +33,7 @@ def find_mismatch(text):
     if opening_brackets_stack:
         return opening_brackets_stack[0].position + 1
     # Atbildes kods
-    return "Success"
+    return "4"
 
 
 def main():
