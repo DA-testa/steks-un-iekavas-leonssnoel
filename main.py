@@ -34,7 +34,7 @@ def find_mismatch(text):
         return opening_brackets_stack[0].position + 1
     # Atbildes kods
     
-    return opening_brackets_stack[0].position + 1
+    return "Success"
 
 
 def main():
