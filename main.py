@@ -38,7 +38,7 @@ def find_mismatch(text):
 
 
 def main():
-    text = input()
+    text = input().strip()
     mismatch = find_mismatch(text)
     print(mismatch)
    
